@@ -5,7 +5,4 @@ temp/
 bin/
 dist/
 .DS_Store
-client/dist/
-share/logs/
-share/dist/
 server/logs/

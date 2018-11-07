@@ -1,0 +1,212 @@
+[
+    {
+        "date": "2018-09-20",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 300
+    },
+    {
+        "date": "2018-09-21",
+        "level": 2,
+        "sum": 40,
+        "wrong": 6,
+        "time": 300
+    },
+    {
+        "date": "2018-09-24",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 300
+    },
+    {
+        "date": "2018-09-25",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 388
+    },
+    {
+        "date": "2018-09-26",
+        "level": 2,
+        "sum": 40,
+        "wrong": 2,
+        "time": 455
+    },
+    {
+        "date": "2018-09-27",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 375
+    },
+    {
+        "date": "2018-09-28",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 300
+    },
+    {
+        "date": "2018-09-29",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 336
+    },
+    {
+        "date": "2018-09-30",
+        "level": 2,
+        "sum": 40,
+        "wrong": 2,
+        "time": 339
+    },
+    {
+        "date": "2018-10-01",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 297
+    },
+    {
+        "date": "2018-10-02",
+        "level": 2,
+        "sum": 40,
+        "wrong": 2,
+        "time": 443
+    },
+    {
+        "date": "2018-10-04",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 344
+    },
+    {
+        "date": "2018-10-05",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 398
+    },
+    {
+        "date": "2018-10-06",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 335
+    },
+    {
+        "date": "2018-10-07",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 430
+    },
+    {
+        "date": "2018-10-08",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 410
+    },
+    {
+        "date": "2018-10-09",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 248
+    },
+    {
+        "date": "2018-10-10",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 333
+    },
+    {
+        "date": "2018-10-11",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 480
+    },
+    {
+        "date": "2018-10-12",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 336
+    },
+    {
+        "date": "2018-10-13",
+        "level": 2,
+        "sum": 40,
+        "wrong": 3,
+        "time": 458
+    },
+    {
+        "date": "2018-10-14",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 339
+    },
+    {
+        "date": "2018-10-18",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 295
+    },
+    {
+        "date": "2018-10-19",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 306
+    },
+    {
+        "date": "2018-10-23",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 237
+    },
+    {
+        "date": "2018-10-24",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 308
+    },
+    {
+        "date": "2018-10-25",
+        "level": 2,
+        "sum": 40,
+        "wrong": 0,
+        "time": 235
+    },
+    {
+        "date": "2018-10-27",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 273
+    },
+    {
+        "date": "2018-10-28",
+        "level": 1,
+        "sum": 80,
+        "wrong": 0,
+        "time": 287
+    },
+    {
+        "date": "2018-10-30",
+        "level": 2,
+        "sum": 40,
+        "wrong": 1,
+        "time": 304
+    }
+]

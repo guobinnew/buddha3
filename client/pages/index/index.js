@@ -42,6 +42,13 @@ Page({
         }
       })
     }
+
+    wx.request({
+      url: 'https://www.uorion.com/api/manifest', //仅为示例，并非真实的接口地
+      success(res) {
+        console.log(res.data)
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
