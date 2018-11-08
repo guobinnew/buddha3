@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    categories: ["小学", "初中", "高中"],
+    grades: [
+      { name:"g1",  value:"小学一年级", icon: ""},
+      { name: "g2", value: "小学二年级", icon: "" },
+      { name: "g3", value: "小学三年级", icon: "" },
+      { name: "g4", value: "小学四年级", icon: "" }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let arr = []
+    for (let i=0; i<100; i++) {
+      arr.push(i)
+    }
+    this.setData({
+      grades: arr
+    })
   },
 
   /**

@@ -1,4 +1,11 @@
 <!--pages/chinese/dictation/dictation.wxml-->
 <view class="container">
-
+  <view class="main">
+    <scroll-view class="aside">
+    <view wx:for="{{categories}}" wx:key="index"><text>{{item}}</text></view>
+    </scroll-view>
+    <scroll-view class="content">
+    <view wx:for="{{grades}}" wx:key="index"><text>{{item}}</text></view>
+    </scroll-view>
+  </view>
 </view>

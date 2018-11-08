@@ -1,1 +1,30 @@
 /* pages/chinese/dictation/dictation.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.aside {
+  flex: 0;
+  width: 80rpx;
+  position: fixed;
+  left: 20rpx;
+  top: 0rpx;
+}
+
+.content {
+  flex: 1;
+  margin-left: 100rpx;
+}
