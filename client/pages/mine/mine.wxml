@@ -1,2 +1,22 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+ <view class="user-info">
+   <block wx:if="{{!hasUserInfo && canIUse}}">
+    <view>
+      <text class="auth-text">请提供以下授权，即可继续操作</text>
+    </view>
+    <block wx:for="{{items}}">
+       <view>
+      <radio class="auth-item" value="{{item.name}}" checked="{{item.checked}}" disabled='{{true}}'>{{item.value}}</radio>
+        </view>
+    </block>
+    <view class="auth-btn">
+    <button type="warn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认授权 </button>
+    </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="user-info-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="user-info-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/welcome/welcome",
     "pages/chinese/dictation/dictation",
     "pages/english/dictation/dictation",
     "pages/english/glossary/glossary",
@@ -19,15 +19,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/homesel.png"
+      },
+      {
+        "pagePath": "pages/chinese/dictation/dictation",
+        "text": "语文",
+        "iconPath": "imgs/chs.png",
+        "selectedIconPath": "imgs/chssel.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "英语",
+        "iconPath": "imgs/eng.png",
+        "selectedIconPath": "imgs/engsel.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "imgs/mine.png",
+        "selectedIconPath": "imgs/minesel.png"
       }
     ]
   }

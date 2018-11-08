@@ -1,10 +1,12 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // 获取本地存储
+    let studentInfo = wx.getStorageSync('student')
+    if (studentInfo) {
+        // 更新学生信息
+        this.globalData.studentInfo = studentInfo
+    }
 
     // 登录
     wx.login({
@@ -32,8 +34,26 @@ App({
         }
       }
     })
+
+    // 请求manifest
+    wx.request({
+      url: 'https://www.uorion.com/api/manifest',
+      success: res => {
+        if (res.data.result === 0) {
+          this.globalData.manifest = res.data.content
+        } else {
+          wx.showToast({
+            title: '获取配置信息出错',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    manifest: null,
+    studentInfo: null
   }
 })

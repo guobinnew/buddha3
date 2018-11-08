@@ -1,2 +1,9 @@
 <!--pages/welcome.wxml-->
-<text>pages/welcome.wxml</text>
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="https://6275-buddha-orion-1258006439.tcb.qcloud.la/lanbaba.png?sign=740cf811447bd72d7735229d1963abb7&t=1541640837" mode="cover"></image>
+  </view>
+  <view class="usermotto">
+    <button type="primary" bindtap="bindEnter"> {{motto}} </button>
+  </view>
+</view>
