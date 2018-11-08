@@ -7,10 +7,18 @@ Page({
   data: {
     categories: ["小学", "初中", "高中"],
     grades: [
-      { name:"g1",  value:"小学一年级", icon: ""},
-      { name: "g2", value: "小学二年级", icon: "" },
-      { name: "g3", value: "小学三年级", icon: "" },
-      { name: "g4", value: "小学四年级", icon: "" }
+      { name:"p1",  value: "小学一年级", icon: "/imgs/primary.png"},
+      { name: "p2", value: "小学二年级", icon: "/imgs/primary.png" },
+      { name: "p3", value: "小学三年级", icon: "/imgs/primary.png" },
+      { name: "p4", value: "小学四年级", icon: "/imgs/primary.png" },
+      { name: "p5", value: "小学五年级", icon: "/imgs/primary.png" },
+      { name: "p6", value: "小学六年级", icon: "/imgs/primary.png" },
+      { name: "m1", value: "初中一年级", icon: "/imgs/middle.png" },
+      { name: "m2", value: "初中二年级", icon: "/imgs/middle.png" },
+      { name: "m3", value: "初中三年级", icon: "/imgs/middle.png" },
+      { name: "h1", value: "高中一年级", icon: "/imgs/high.png" },
+      { name: "h2", value: "高中二年级", icon: "/imgs/high.png" },
+      { name: "h3", value: "高中三年级", icon: "/imgs/high.png" }
     ]
   },
 
@@ -18,13 +26,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let arr = []
-    for (let i=0; i<100; i++) {
-      arr.push(i)
-    }
-    this.setData({
-      grades: arr
-    })
   },
 
   /**

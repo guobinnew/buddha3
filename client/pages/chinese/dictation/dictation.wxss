@@ -18,13 +18,45 @@
 
 .aside {
   flex: 0;
-  width: 80rpx;
+  width: 120rpx;
   position: fixed;
-  left: 20rpx;
+  left: 40rpx;
   top: 0rpx;
 }
 
 .content {
   flex: 1;
-  margin-left: 100rpx;
+  margin-left: 160rpx;
+}
+
+.cate-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border: solid 1rpx #333;
+  margin: 10rpx;
+}
+
+.cate-item-text {
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.grade-item {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 150rpx;
+}
+
+.grade-item-img {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.grade-item-text {
+  margin-left: 50rpx;
+
 }

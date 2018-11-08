@@ -2,10 +2,14 @@
 <view class="container">
   <view class="main">
     <scroll-view class="aside">
-    <view wx:for="{{categories}}" wx:key="index"><text>{{item}}</text></view>
+    <view wx:for="{{categories}}" wx:key="index" class="cate-item">
+    <text class="cate-item-text">{{item}}</text>
+    </view>
     </scroll-view>
     <scroll-view class="content">
-    <view wx:for="{{grades}}" wx:key="index"><text>{{item}}</text></view>
+    <view wx:for="{{grades}}" wx:key="item.name" class="grade-item">
+     <image class="grade-item-img" src="{{item.icon}}" mode="cover"></image>
+    <text class="grade-item-text">{{item.value}}</text></view>
     </scroll-view>
   </view>
 </view>
