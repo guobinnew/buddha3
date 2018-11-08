@@ -1,4 +1,4 @@
-/* pages/chinese/dictation/dictation.wxss */
+/* pages/chinese/selection/selection.wxss */
 .container {
   display: flex;
   flex-direction: column;

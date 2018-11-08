@@ -7,7 +7,8 @@
     "pages/english/dictation/dictation",
     "pages/english/glossary/glossary",
     "pages/chinese/words/words",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/chinese/selection/selection"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,7 +25,7 @@
         "selectedIconPath": "imgs/homesel.png"
       },
       {
-        "pagePath": "pages/chinese/dictation/dictation",
+        "pagePath": "pages/chinese/selection/selection",
         "text": "语文",
         "iconPath": "imgs/chs.png",
         "selectedIconPath": "imgs/chssel.png"

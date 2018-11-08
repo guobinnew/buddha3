@@ -1,3 +1,4 @@
+// pages/chinese/selection/selection.js
 // pages/chinese/dictation/dictation.js
 Page({
 
@@ -7,7 +8,7 @@ Page({
   data: {
     categories: ["小学", "初中", "高中"],
     grades: [
-      { name: "p1", value: "小学一年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD"},
+      { name: "p1", value: "小学一年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
       { name: "p2", value: "小学二年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
       { name: "p3", value: "小学三年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
       { name: "p4", value: "小学四年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
