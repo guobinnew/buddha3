@@ -1,4 +1,16 @@
 <!--pages/chinese/player/player.wxml-->
 <view class="container">
-
+<view><text>语文听写</text></view>
+<view class>
+<button type="info">重新开始</button>
+<button type="primary">上一个</button>
+<button type="primary">下一个</button>
+</view>
+<view>
+</view>
+<view>
+<button type="primary">重读一遍</button>
+<button type="warn">查看答案</button>
+</view>
+<progress percent="40" stroke-width="12" />
 </view>

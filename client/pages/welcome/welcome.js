@@ -4,7 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '开始使用懒爸爸'
+    motto: '开始使用懒爸爸',
+    logo: ''
   },
   onLoad: function () {
   },
@@ -19,6 +20,20 @@ Page({
           windowHeight: Math.floor(windowHeight)
         }
         console.log(app.globalData.systemInfo)
+      }
+    })
+
+    wx.cloud.getTempFileURL({
+      fileList: ['cloud://buddha-orion.6275-buddha-orion/lanbaba.png'],
+      success: res => {
+        this.setData({
+          logo: res.fileList[0].tempFileURL
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          title: '读取Logo失败',
+        })
       }
     })
   },

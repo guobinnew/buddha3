@@ -8,6 +8,10 @@ App({
         this.globalData.studentInfo = studentInfo
     }
 
+    wx.cloud.init({
+      env: 'buddha-orion'
+    })
+
     // 登录
     wx.login({
       success: res => {
