@@ -7,9 +7,11 @@
     <text class="cate-item-text">{{item}}</text>
     </view>
     </scroll-view>
-    <scroll-view class="content"  style="height: {{scrollHeight}}rpx;">
+    <scroll-view scroll-y style=" margin-left: 160rpx; height: {{scrollHeight}}rpx;">
+     <view class="content" style="height: {{scrollHeight}}rpx;">
      <view wx:for="{{chapters}}" wx:key="item.name" data-id="{{index}}" class="{{'chapter-item ' + (item.sel ? 'chapter-item-sel' : '')}}"  bindtap="bindChapterTap">
       <text selectable >{{'第'+(index+1)+'课'}}</text>
+      </view>
       </view>
       </scroll-view>
   </view>

@@ -60,7 +60,8 @@
     next()
   })
 
-  app.use('/api', require('./api'));
+  app.use('/api/v1', require('./api_v1'));
+  app.use('/api/v2', require('./api_v2'));
 
   // 错误请求的日志
   app.use(expressWinston.errorLogger({

@@ -9,14 +9,8 @@ Page({
    */
   data: {
     sections: ["上册", "下册", "扩展"],
-    chapters: [
-      { sel: false, data:["小草"]  },
-      { sel: false, data: ["小草"] },
-      { sel: false, data: ["小草"] },
-      { sel: false, data: ["小草"] },
-      { sel: false, data: ["小草"] },
-      { sel: false, data: ["小草"] }
-    ],
+    chapters: [],
+    words: {},
     currentSection: 0,
     scrollHeight: 1206
   },
@@ -25,18 +19,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.systemInfo) {
-      this.data.scrollHeight = app.globalData.systemInfo.windowHeight
-    }
-
     // 默认人教版
     let source = 'rj'
+    let key = 'chs/words/' + source + '/' + options.grade
     // 根据url参数读取词汇表
-    let words =  wx.getStorageSync('chs/words/rj/' + options.id)
+    let words =  wx.getStorageSync(key)
     if (!words) {
-      // 如果没有找到，则提示下载
+      // 请求manifest
+      wx.request({
+        url: 'https://www.uorion.com/api/v2/getWords?source=' + source + '&grade=' + options.grade,
+        success: res => {
+          if (res.data.result === 0) {
+            wx.setStorageSync(key, res.data.content)
+            this.data.words = res.data.content
+            this.loadWords()
+          } else {
+            wx.showToast({
+              title: '获取单词表出错',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
+      })
     } else {
-
+      this.data.words = words
+      this.loadWords()
     }
   },
 
@@ -44,7 +52,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    if (app.globalData.systemInfo) {
+      this.setData({
+        scrollHeight: app.globalData.systemInfo.windowHeight - 200
+      })
+    }
   },
 
   /**
@@ -93,6 +105,7 @@ Page({
     this.setData({
       currentSection: Number(evt.currentTarget.dataset.id)
     })
+    this.loadWords()
   },
 
   bindChapterTap: function(evt) {
@@ -106,8 +119,48 @@ Page({
   },
 
   bindActionTap: function (evt) {
+    // 判断是否有单词
+    let words = []
+    this.data.chapters.forEach( v => {
+      if (v.sel) {
+        words = words.concat(v.data)
+      }
+    })
+
+    if (words.length === 0) {
+      wx.showToast({
+        title: '没有可听写的单词',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+
+    app.globalData.words = words
+
     wx.navigateTo({
       url: '/pages/chinese/player/player',
+    })
+  },
+
+  loadWords() {
+    let sectionName = 'first'
+    if (this.data.currentSection === 1) {
+      sectionName = 'second'
+    } else if (this.data.currentSection === 2) {
+      sectionName = 'extend'
+    }
+
+    let chps = []
+    this.data.words[sectionName].forEach(v => {
+      chps.push({
+        sel: false,
+        data: v
+      })
+    })
+
+    this.setData({
+      chapters: chps
     })
   }
 })

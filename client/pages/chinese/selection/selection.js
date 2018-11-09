@@ -99,7 +99,7 @@ Page({
     // 进入听写页面
     let id = evt.currentTarget.id
     wx.navigateTo({
-      url: '/pages/chinese/dictation/dictation?id=' + id
+      url: '/pages/chinese/dictation/dictation?grade=' + id
     })
   }
 })

@@ -41,9 +41,11 @@
 
 .content {
   flex: 1;
-  margin-left: 160rpx;
-  padding-top: 80rpx;
+  padding-top: 100rpx;
   line-height: 140rpx;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
 }
 
 .cate-item {
@@ -70,15 +72,18 @@
 }
 
 .chapter-item {
-  display: inline;
+  height: 100rpx;
   line-height: 100rpx;
   margin-right: 20rpx;
   border-radius: 8rpx;
   border: 1rpx solid #ebeef5;
   overflow: hidden;
   color: #303133;
-  padding: 20rpx 20rpx;
+  padding: 0 20rpx;
   box-shadow: 0 2rpx 12rpx 0 rgba(0,0,0,.1);
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
 }
 .chapter-item-sel {
   background-color: #e64340;

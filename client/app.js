@@ -41,7 +41,7 @@ App({
 
     // 请求manifest
     wx.request({
-      url: 'https://www.uorion.com/api/manifest',
+      url: 'https://www.uorion.com/api/v2/manifest',
       success: res => {
         if (res.data.result === 0) {
           this.globalData.manifest = res.data.content
@@ -59,6 +59,7 @@ App({
     userInfo: null,
     manifest: null,
     studentInfo: null,
-    systemInfo: null
+    systemInfo: null,
+    words: []
   }
 })

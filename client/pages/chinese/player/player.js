@@ -1,18 +1,28 @@
 // pages/chinese/player/player.js
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showAnswer: false,
+    word: '我爱大钞员',
+    percent: 0,
+    words: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.words = app.globalData.words
+    if (this.validateWords()) {
 
+    }
+   
   },
 
   /**
@@ -62,5 +72,49 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindRestartTap: function() {
+    if (!this.validateWords()) {
+      return
+    }
+
+  },
+
+  bindNextTap: function() {
+    if (!this.validateWords()) {
+      return
+    }
+    
+  },
+
+  bindPrevTap: function() {
+    if (!this.validateWords()) {
+      return
+    }
+  },
+
+  bindAgainTap: function() {
+    if (!this.validateWords()) {
+      return
+    }
+  },
+
+  bindAnswerTap: function() {
+    this.setData({
+      showAnswer: true
+    })
+  },
+
+  validateWords: function() {
+    if (this.data.words.length === 0) {
+      wx.showToast({
+        title: '没有找到听写的单词，请返回重试',
+        icon: 'none',
+        duration: 4000
+      })
+      return false
+    }
+    return true
   }
 })
