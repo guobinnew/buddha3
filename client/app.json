@@ -8,7 +8,8 @@
     "pages/english/glossary/glossary",
     "pages/chinese/words/words",
     "pages/mine/mine",
-    "pages/chinese/selection/selection"
+    "pages/chinese/selection/selection",
+    "pages/chinese/player/player"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -54,6 +54,7 @@ App({
   globalData: {
     userInfo: null,
     manifest: null,
-    studentInfo: null
+    studentInfo: null,
+    systemInfo: null
   }
 })

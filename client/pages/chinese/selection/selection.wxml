@@ -3,14 +3,15 @@
 <view class="container">
   <view class="main">
     <scroll-view class="aside">
-    <view wx:for="{{categories}}" wx:key="index" class="cate-item">
-    <text class="cate-item-text">{{item}}</text>
+    <view wx:for="{{categories}}" wx:key="index" class="cate-item" data-name="{{item.name}}" bindtap="bindCategoryTap">
+    <text class="cate-item-text">{{item.value}}</text>
     </view>
     </scroll-view>
-    <scroll-view class="content">
-    <view wx:for="{{grades}}" wx:key="item.name" class="grade-item">
+    <scroll-view scroll-y scroll-with-animation style="height: {{scrollHeight}}rpx;" class="content" scroll-into-view="{{toView}}">
+    <view wx:for="{{grades}}" wx:key="item.name" class="grade-item" id="{{item.name}}" bindtap="bindGradeTap">
      <image class="grade-item-img" src="{{item.icon}}" mode="cover"></image>
     <text class="grade-item-text">{{item.value}}</text></view>
+    <view style="height: {{scrollHeight}}rpx;"></view>
     </scroll-view>
   </view>
 </view>

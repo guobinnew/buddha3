@@ -28,6 +28,7 @@
 .content {
   flex: 1;
   margin-left: 160rpx;
+  height: 1000rpx;
 }
 
 .cate-item {
@@ -71,4 +72,8 @@
 
 .grade-item-text {
   margin-left: 50rpx;
+}
+
+.replaceholder {
+  height: 600rpx;
 }

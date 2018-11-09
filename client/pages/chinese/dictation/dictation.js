@@ -1,31 +1,43 @@
 // pages/chinese/dictation/dictation.js
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    categories: ["小学", "初中", "高中"],
-    grades: [
-      { name: "p1", value: "小学一年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD"},
-      { name: "p2", value: "小学二年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
-      { name: "p3", value: "小学三年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
-      { name: "p4", value: "小学四年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
-      { name: "p5", value: "小学五年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
-      { name: "p6", value: "小学六年级", icon: "/imgs/primary.png", bgcolor: "#FFEBCD" },
-      { name: "m1", value: "初中一年级", icon: "/imgs/middle.png", bgcolor: "#FFEBCD" },
-      { name: "m2", value: "初中二年级", icon: "/imgs/middle.png", bgcolor: "#FFEBCD" },
-      { name: "m3", value: "初中三年级", icon: "/imgs/middle.png", bgcolor: "#FFEBCD" },
-      { name: "h1", value: "高中一年级", icon: "/imgs/high.png", bgcolor: "#FFEBCD" },
-      { name: "h2", value: "高中二年级", icon: "/imgs/high.png", bgcolor: "#FFEBCD" },
-      { name: "h3", value: "高中三年级", icon: "/imgs/high.png", bgcolor: "#FFEBCD" }
-    ]
+    sections: ["上册", "下册", "扩展"],
+    chapters: [
+      { sel: false, data:["小草"]  },
+      { sel: false, data: ["小草"] },
+      { sel: false, data: ["小草"] },
+      { sel: false, data: ["小草"] },
+      { sel: false, data: ["小草"] },
+      { sel: false, data: ["小草"] }
+    ],
+    currentSection: 0,
+    scrollHeight: 1206
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.systemInfo) {
+      this.data.scrollHeight = app.globalData.systemInfo.windowHeight
+    }
+
+    // 默认人教版
+    let source = 'rj'
+    // 根据url参数读取词汇表
+    let words =  wx.getStorageSync('chs/words/rj/' + options.id)
+    if (!words) {
+      // 如果没有找到，则提示下载
+    } else {
+
+    }
   },
 
   /**
@@ -75,5 +87,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindSectionTap: function(evt) {
+    this.setData({
+      currentSection: Number(evt.currentTarget.dataset.id)
+    })
+  },
+
+  bindChapterTap: function(evt) {
+    let id = Number(evt.currentTarget.dataset.id)
+    let state = !this.data.chapters[id].sel
+    console.log(state)
+    let change = 'chapters[' + id + '].sel'
+    this.setData({
+      [change]: state
+    })
+  },
+
+  bindActionTap: function (evt) {
+    wx.navigateTo({
+      url: '/pages/chinese/player/player',
+    })
   }
 })
