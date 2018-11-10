@@ -39,8 +39,6 @@ Page({
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.autoplay = true;
     this.innerAudioContext.loop = false;
-   
-   console.log(this.data)
   },
 
   /**

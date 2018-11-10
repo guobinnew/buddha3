@@ -92,6 +92,10 @@
   background-color: #e64340;
   color: #fff;
 }
+
+.chapter-item-num {
+  font-size: 26rpx;
+}
 .action {
   position: fixed;
   bottom: 0;

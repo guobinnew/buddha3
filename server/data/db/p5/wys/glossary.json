@@ -1,0 +1,12 @@
+{
+  "first": [
+    [
+      ["year","年"],
+      ["before","以前"],
+      ["duck","鸭子"],
+      ["playground","操场"]     
+    ]
+  ],
+  "second": [],
+  "extend": []
+}

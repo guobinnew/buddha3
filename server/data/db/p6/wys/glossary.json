@@ -1,0 +1,14 @@
+{
+  "first": [
+    [
+      ["thousand","一千，一千个"],
+      ["kilometre","公里"],     
+      ["might","可能，可以"],   
+      ["million","百万，百万个"],    
+      ["place","地方，地点"],   
+      ["building","建筑物，大楼"]
+    ]
+  ],
+  "second": [],
+  "extend": []
+}

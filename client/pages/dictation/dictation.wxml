@@ -20,7 +20,8 @@
      <view class="content" style="height: {{scrollHeight}}rpx;">
      <block wx:for="{{chapters}}" wx:key="item.name">
      <view wx:if="{{item.data.length > 0}}" data-id="{{index}}" class="{{'chapter-item ' + (item.sel ? 'chapter-item-sel' : '')}}"  bindtap="bindChapterTap">
-      <text selectable >{{'第'+(index+1)+'课('+item.data.length+')'}}</text>
+      <text>{{'第'+(index+1)+'课'}}</text>
+      <text class="chapter-item-num">{{'('+item.data.length+')'}}</text>
       </view>
       </block>
       </view>
