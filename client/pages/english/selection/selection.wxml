@@ -2,7 +2,7 @@
 <!--pages/chinese/dictation/dictation.wxml-->
 <view class="container">
  <view class="title">
-  <text>语文</text>
+  <text>英语</text>
   </view>
   <view class="main">
     <scroll-view class="aside">

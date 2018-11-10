@@ -10,7 +10,9 @@
     "pages/chinese/words/words",
     "pages/mine/mine",
     "pages/chinese/selection/selection",
-    "pages/chinese/player/player"
+    "pages/chinese/player/player",
+    "pages/english/selection/selection",
+    "pages/english/player/player"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +35,7 @@
         "selectedIconPath": "imgs/chssel.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/english/selection/selection",
         "text": "英语",
         "iconPath": "imgs/eng.png",
         "selectedIconPath": "imgs/engsel.png"

@@ -5,7 +5,7 @@
     <view>
       <text class="auth-text">请提供以下授权，即可继续操作</text>
     </view>
-    <block wx:for="{{items}}">
+    <block wx:for="{{items}}" ex:key="index">
        <view>
       <radio class="auth-item" value="{{item.name}}" checked="{{item.checked}}" disabled='{{true}}'>{{item.value}}</radio>
         </view>

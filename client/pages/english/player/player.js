@@ -11,7 +11,7 @@ Page({
     uid: '',
     showAnswer: false,
     showList: false,
-    word: '',
+    word: ['',''],
     words: [],
     list: [],
     current: 0,
@@ -185,7 +185,7 @@ Page({
     this.data.current = index
 
     this.setData({
-      word: index > 0 ? this.data.words[index - 1] : '',
+      word: index > 0 ? this.data.words[index - 1] : ['',''],
       progressText: this.data.current + ' / ' + this.data.words.length,
       progressPercent:  Math.floor(Number(index) / this.data.words.length * 100.0)
     })
@@ -205,7 +205,7 @@ Page({
       url: 'https://www.uorion.com/api/v2/speech',
       data: {
         uid: this.data.uid,
-        text: w,
+        text: w[0],
         spd: '' + spt,
         pit: '3',
         vol: '6',

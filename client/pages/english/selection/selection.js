@@ -34,6 +34,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
   },
 
   /**
@@ -100,7 +101,7 @@ Page({
     // 进入听写页面
     let id = evt.currentTarget.id
     wx.navigateTo({
-      url: '/pages/chinese/dictation/dictation?grade=' + id
+      url: '/pages/english/dictation/dictation?grade=' + id
     })
   }
 })

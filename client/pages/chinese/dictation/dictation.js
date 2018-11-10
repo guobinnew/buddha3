@@ -12,7 +12,12 @@ Page({
     chapters: [],
     words: {},
     currentSection: 0,
-    scrollHeight: 1206
+    scrollHeight: 1206,
+    currentMode: 1,
+    modes: [
+      { title: '顺序' },
+      { title: '随机' },
+    ]
   },
 
   /**
@@ -54,7 +59,7 @@ Page({
   onReady: function () {
     if (app.globalData.systemInfo) {
       this.setData({
-        scrollHeight: app.globalData.systemInfo.windowHeight - 200
+        scrollHeight: app.globalData.systemInfo.windowHeight - 420
       })
     }
   },
@@ -118,6 +123,18 @@ Page({
     })
   },
 
+  shuffleWord: function(words) {
+    // 洗牌
+    var len = words.length
+    for (let i = 0; i < len - 1; i++) {
+      let idx = Math.floor(Math.random() * (len - i));
+      let temp = words[idx];
+      words[idx] = words[len - i - 1]
+      words[len - i - 1] = temp
+    }
+    return words
+  },
+
   bindActionTap: function (evt) {
     // 判断是否有单词
     let words = []
@@ -134,6 +151,11 @@ Page({
         duration: 2000
       })
       return
+    }
+
+    // 随机打乱
+    if (this.data.currentMode === 1) {
+      this.shuffleWord(words)
     }
 
     app.globalData.words = words
@@ -161,6 +183,12 @@ Page({
 
     this.setData({
       chapters: chps
+    })
+  },
+
+  bindModeTap: function(evt) {
+    this.setData({
+      currentMode: Number(evt.currentTarget.dataset.id)
     })
   }
 })

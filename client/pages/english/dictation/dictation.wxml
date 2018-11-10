@@ -1,2 +1,32 @@
-<!--pages/english/dictation/dictation.wxml-->
-<text>pages/english/dictation/dictation.wxml</text>
+<!--pages/chinese/dictation/dictation.wxml-->
+<view class="container">
+  <view class="title">
+  <text>选择听写章节</text>
+  <view class="mode">
+<text>听写模式</text>
+<view wx:for="{{modes}}" wx:key="index" data-id="{{index}}" class="{{'mode-item ' + (currentMode === index ? 'mode-item-sel' : '')}}" bindtap="bindModeTap">
+<text class="mode-item-text">{{item.title}}</text>
+</view>
+</view>
+  </view>
+  
+  <view class="main">
+    <scroll-view class="aside">
+    <view wx:for="{{sections}}" wx:key="index" data-id="{{index}}" class="{{'cate-item ' + (currentSection === index ? 'cate-item-sel' : '')}}" bindtap="bindSectionTap">
+    <text class="cate-item-text">{{item}}</text>
+    </view>
+    </scroll-view>
+    <scroll-view scroll-y style=" margin-left: 160rpx; height: {{scrollHeight}}rpx;">
+     <view class="content" style="height: {{scrollHeight}}rpx;">
+     <block wx:for="{{chapters}}" wx:key="item.name">
+     <view wx:if="{{item.data.length > 0}}" data-id="{{index}}" class="{{'chapter-item ' + (item.sel ? 'chapter-item-sel' : '')}}"  bindtap="bindChapterTap">
+      <text selectable >{{'第'+(index+1)+'课('+item.data.length+')'}}</text>
+      </view>
+      </block>
+      </view>
+      </scroll-view>
+  </view>
+  <view class="action" style="">
+  <button class="dictation" type="primary" bindtap="bindActionTap">开始听写</button>
+  </view>
+</view>

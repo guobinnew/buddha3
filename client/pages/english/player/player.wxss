@@ -47,6 +47,11 @@
   line-height: 100rpx;
 }
 
+.answer-text-exp {
+  font-size: 50rpx;
+  line-height: 50rpx;
+}
+
 .progress {
   display: flex;
   flex-direction: column;
