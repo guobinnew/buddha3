@@ -1,12 +1,17 @@
-// pages/chinese/selection/selection.js
+// pages/chinese/source/source.js
 //获取应用实例
 const app = getApp()
 
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
+    grade: '',
+    type: '',
+    source: '',
+    sources: [],
     scrollHeight: 1206
   },
 
@@ -14,15 +19,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.type = options.type
+    this.data.grade = options.grade
+    if (app.globalData.systemInfo) {
+      this.setData({
+        scrollHeight: app.globalData.systemInfo.windowHeight - 200
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    if (app.globalData.systemInfo) {
+    if (app.globalData.manifest) {
+      let sources = app.globalData.manifest.database.items.map( v => {
+        v.icon = "/imgs/" + v.id + ".jpeg"
+        return v
+      })
       this.setData({
-        scrollHeight: app.globalData.systemInfo.windowHeight - 200
+        sources: sources
       })
     }
   },
@@ -67,5 +83,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindSourceTap: function (evt) {
+    // 进入听写页面
+    let id = evt.currentTarget.id
+    wx.navigateTo({
+      url: '/pages/dictation/dictation?type=' + this.data.type +'&grade=' + this.data.grade + '&source=' + id
+    })
   }
 })

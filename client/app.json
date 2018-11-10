@@ -4,16 +4,19 @@
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/chinese/dictation/dictation",
-    "pages/english/dictation/dictation",
+    "pages/dictation/dictation",
     "pages/english/glossary/glossary",
     "pages/chinese/words/words",
     "pages/mine/mine",
     "pages/chinese/selection/selection",
     "pages/chinese/player/player",
     "pages/english/selection/selection",
-    "pages/english/player/player"
+    "pages/english/player/player",
+    "pages/source/source"
   ],
+  "usingComponents": {
+    "grade": "components/grade/grade"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

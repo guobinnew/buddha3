@@ -145,7 +145,7 @@ const emptyChapter = {
 }
 
 router.get('/getWords', function (req, res, next) {
-  var _path = path.join(dbpath, req.query.source, req.query.grade, 'words.json')
+  var _path = path.join(dbpath, req.query.grade, req.query.source, 'words.json')
   try {
     var json = readDBFileSync(_path, emptyChapter)
     sendJson(res, {result: 0, err: '', content: json})
@@ -156,7 +156,7 @@ router.get('/getWords', function (req, res, next) {
 })
 
 router.get('/getGlossary', function (req, res, next) {
-  var _path = path.join(dbpath, req.query.source, req.query.grade, 'glossary.json')
+  var _path = path.join(dbpath, req.query.grade, req.query.source,  'glossary.json')
   try {
     var json = readDBFileSync(_path, emptyChapter)
     sendJson(res, {result: 0, err: '', content: json})

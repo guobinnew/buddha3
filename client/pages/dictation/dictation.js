@@ -17,22 +17,27 @@ Page({
     modes: [
       { title: '顺序' },
       { title: '随机' },
-    ]
+    ],
+    commands: {
+      'chinese': 'getWords',
+      'english': 'getGlossary'
+    },
+    type: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 默认人教版
-    let source = 'rj'
-    let key = 'chs/words/' + source + '/' + options.grade
+    this.data.type = options.type
+    let key = options.type + '/dictation/' + options.source + '/' + options.grade
     // 根据url参数读取词汇表
-    let words =  wx.getStorageSync(key)
+    let words = wx.getStorageSync(key)
+    let cmd = this.data.commands[options.type]
     if (!words) {
-      // 请求manifest
+      // 请求词汇表
       wx.request({
-        url: 'https://www.uorion.com/api/v2/getWords?source=' + source + '&grade=' + options.grade,
+        url: 'https://www.uorion.com/api/v2/' + cmd + '?source=' + options.source + '&grade=' + options.grade,
         success: res => {
           if (res.data.result === 0) {
             wx.setStorageSync(key, res.data.content)
@@ -161,7 +166,7 @@ Page({
     app.globalData.words = words
 
     wx.navigateTo({
-      url: '/pages/chinese/player/player',
+      url: '/pages/' + this.data.type + '/player/player',
     })
   },
 

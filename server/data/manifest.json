@@ -1,1 +1,20 @@
-{"appName":"懒爸爸","version":"0.1.1","company":"Unique","user":{"name":"灵灵","class":1},"database":{"sources":{"current":0,"items":[{"id":"rj","name":"人教版"},{"id":"bsd","name":"北师大版"}]}},"pages":{"maths":[1,3,4],"chineses":[1,3,4],"englishs":[1,3,4],"logics":[1,3,4]}}
+{
+  "appName": "懒爸爸",
+  "version": "0.1.2",
+  "company": "Unique",
+  "database": {
+    "items": [{
+        "id": "rj",
+        "name": "人教版"
+      },
+      {
+        "id": "bsd",
+        "name": "北师大版"
+      },
+      {
+        "id": "wys",
+        "name": "外研社版"
+      }
+    ]
+  }
+}

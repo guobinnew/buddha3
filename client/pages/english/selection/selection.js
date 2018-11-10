@@ -101,7 +101,7 @@ Page({
     // 进入听写页面
     let id = evt.currentTarget.id
     wx.navigateTo({
-      url: '/pages/english/dictation/dictation?grade=' + id
+      url: '/pages/source/source?type=english&grade=' + id
     })
   }
 })
