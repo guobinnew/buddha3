@@ -121,7 +121,6 @@ Page({
   bindChapterTap: function(evt) {
     let id = Number(evt.currentTarget.dataset.id)
     let state = !this.data.chapters[id].sel
-    console.log(state)
     let change = 'chapters[' + id + '].sel'
     this.setData({
       [change]: state
