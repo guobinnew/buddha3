@@ -9,9 +9,11 @@
     </scroll-view>
     <scroll-view scroll-y style=" margin-left: 160rpx; height: {{scrollHeight}}rpx;">
      <view class="content" style="height: {{scrollHeight}}rpx;">
-     <view wx:for="{{chapters}}" wx:key="item.name" data-id="{{index}}" class="{{'chapter-item ' + (item.sel ? 'chapter-item-sel' : '')}}"  bindtap="bindChapterTap">
-      <text selectable >{{'第'+(index+1)+'课'}}</text>
+     <block wx:for="{{chapters}}" wx:key="item.name">
+     <view wx:if="{{item.data.length > 0}}" data-id="{{index}}" class="{{'chapter-item ' + (item.sel ? 'chapter-item-sel' : '')}}"  bindtap="bindChapterTap">
+      <text selectable >{{'第'+(index+1)+'课('+item.data.length+')'}}</text>
       </view>
+      </block>
       </view>
       </scroll-view>
   </view>

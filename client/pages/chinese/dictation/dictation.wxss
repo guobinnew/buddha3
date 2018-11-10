@@ -64,6 +64,7 @@
 
 .cate-item-sel {
   background-color: #09bb07;
+  color: #fff;
 }
 
 .cate-item-text {
@@ -81,12 +82,13 @@
   color: #303133;
   padding: 0 20rpx;
   box-shadow: 0 2rpx 12rpx 0 rgba(0,0,0,.1);
-  width: 150rpx;
+  width: 190rpx;
   display: flex;
   justify-content: center;
 }
 .chapter-item-sel {
   background-color: #e64340;
+  color: #fff;
 }
 .action {
   position: fixed;

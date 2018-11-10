@@ -45,6 +45,7 @@ App({
       success: res => {
         if (res.data.result === 0) {
           this.globalData.manifest = res.data.content
+          console.log(this.globalData.manifest)
         } else {
           wx.showToast({
             title: '获取配置信息出错',

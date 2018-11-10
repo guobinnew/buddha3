@@ -8,6 +8,7 @@ var path = require('path')
 var fs = require('fs')
 var settings = require('./setting')
 var uuidv4 = require('uuid/v4')
+var crc32 = require('crc').crc32
 var AipSpeechServer = require('baidu-aip-sdk').speech;
 
 //设置appid/appkey/appsecret
@@ -104,6 +105,7 @@ router.post('/login', function (req, res, next) {
 router.get('/manifest', function (req, res, next) {
   var _path = path.join(__dirname, 'data/manifest.json')
   var json = readDBFileSync(_path, {})
+  json.uid = crc32(uuidv4()).toString(16)
   sendJson(res, {result: 0, err: '', content: json})
 })
 
@@ -167,8 +169,10 @@ router.get('/getGlossary', function (req, res, next) {
 const audiopath = path.join(__dirname, '../client/dist/audio')
 // 语音合成
 router.post('/speech', function(req, res, next){
-  console.log(req.body);//用这种content-type=www-form-urlencoded才能获取到参数
-  console.log(req.body.text.length);
+  console.log(req.body);
+  var tag = req.body.uid || crc32(uuidv4()).toString(16)
+  var filename = 'tts.' + tag + '.mp3'
+  var fileurl = 'https://www.uorion.com/audio/' + filename
 
   client.text2audio(
     req.body.text || '你好，百度语音合成测试',
@@ -186,8 +190,8 @@ router.post('/speech', function(req, res, next){
           fs.mkdirSync(audiopath)
         }
 
-        fs.writeFileSync(path.join(audiopath, 'tts.audio.mp3'), result.data);
-        sendJson(res, {result: 0, err: '', content: 'https://www.uorion.com/audio/tts.audio.mp3'})
+        fs.writeFileSync(path.join(audiopath,filename), result.data);
+        sendJson(res, {result: 0, err: '', content: fileurl })
       }else{
         // 服务发生错误
         console.log(result);
