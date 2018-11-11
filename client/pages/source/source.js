@@ -12,7 +12,7 @@ Page({
     type: '',
     source: '',
     sources: {
-      'chinese': ['rj','bsd'],
+      'chinese': ['rj'],
       'english': ['wys']
     },
     list: [],
