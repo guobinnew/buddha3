@@ -1,0 +1,20 @@
+{
+  "appName": "懒爸爸",
+  "version": "0.1.2",
+  "company": "Unique",
+  "database": {
+    "items": [{
+        "id": "rj",
+        "name": "人教版"
+      },
+      {
+        "id": "bsd",
+        "name": "北师大版"
+      },
+      {
+        "id": "wys",
+        "name": "外研社版"
+      }
+    ]
+  }
+}

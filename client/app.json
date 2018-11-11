@@ -1,0 +1,56 @@
+{
+  "cloud": true,
+  "resizable": true,
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/dictation/dictation",
+    "pages/english/glossary/glossary",
+    "pages/chinese/words/words",
+    "pages/mine/mine",
+    "pages/chinese/selection/selection",
+    "pages/chinese/player/player",
+    "pages/english/selection/selection",
+    "pages/english/player/player",
+    "pages/source/source",
+    "pages/data/data"
+  ],
+  "usingComponents": {
+    "grade": "components/grade/grade"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "懒爸爸",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/homesel.png"
+      },
+      {
+        "pagePath": "pages/chinese/selection/selection",
+        "text": "语文",
+        "iconPath": "imgs/chs.png",
+        "selectedIconPath": "imgs/chssel.png"
+      },
+      {
+        "pagePath": "pages/english/selection/selection",
+        "text": "英语",
+        "iconPath": "imgs/eng.png",
+        "selectedIconPath": "imgs/engsel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "imgs/mine.png",
+        "selectedIconPath": "imgs/minesel.png"
+      }
+    ]
+  }
+}

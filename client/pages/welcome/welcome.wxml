@@ -1,0 +1,9 @@
+<!--pages/welcome.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{logo}}" mode="cover"></image>
+  </view>
+  <view class="usermotto">
+    <button type="primary" bindtap="bindEnter"> {{motto}} </button>
+  </view>
+</view>

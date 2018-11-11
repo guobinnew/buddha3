@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+logs/
+temp/
+bin/
+dist/
+.DS_Store
+server/logs/

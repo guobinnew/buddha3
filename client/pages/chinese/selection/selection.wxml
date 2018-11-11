@@ -1,0 +1,5 @@
+<!--pages/chinese/selection/selection.wxml-->
+<view>
+  <grade course="chinese" scrollHeight="{{scrollHeight}}"></grade>
+</view>
+
