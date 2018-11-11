@@ -5,9 +5,15 @@ const app = getApp()
 Page({
   data: {
     motto: '开始使用懒爸爸',
-    logo: ''
+    logo: '',
+    fileList:[
+      { id: "logo", url:"cloud://buddha-orion.6275-buddha-orion/lanbaba.png", path:""},
+    ]
   },
   onLoad: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
   },
   onReady: function() {
     wx.getSystemInfo({
@@ -23,16 +29,22 @@ Page({
       }
     })
 
+    let files = this.data.fileList.map( v=> {
+      return v.url
+    })
     wx.cloud.getTempFileURL({
-      fileList: ['cloud://buddha-orion.6275-buddha-orion/lanbaba.png'],
+      fileList: files,
       success: res => {
-        this.setData({
-          logo: res.fileList[0].tempFileURL
+        res.fileList.forEach( (v, index) => {
+          this.data.fileList[index].path = v.tempFileURL
         })
+        this.updateFiles()
+        wx.hideLoading()
       },
       fail: err => {
+        wx.hideLoading()
         wx.showToast({
-          title: '读取Logo失败',
+          title: '读取云文件失败',
         })
       }
     })
@@ -42,5 +54,13 @@ Page({
     wx.switchTab({
       url: '/pages/index/index',
     })
+  },
+
+  updateFiles: function() {
+    let data = {}
+    this.data.fileList.forEach( v => {
+      data[v.id] = v.path
+    })
+    this.setData(data)
   }
 })

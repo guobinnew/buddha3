@@ -38,3 +38,12 @@
 .user-info-nickname {
   color: #aaa;
 }
+
+.buttons {
+  width: 100%;
+  margin: 20rpx;
+}
+
+.btn {
+  margin: 20rpx 0;
+}

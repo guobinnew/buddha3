@@ -205,7 +205,7 @@ Page({
         uid: this.data.uid,
         text: w[0],
         spd: '' + spt,
-        pit: '3',
+        pit: '5',
         vol: '6',
         per: '0'
       },

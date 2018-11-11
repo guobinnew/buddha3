@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+ <image class="splash" src="{{splash}}" mode="cover"></image>
  <text class="intro">
  懒爸爸小程序致力于成为学生家长的好帮手，帮助家长轻松完成孩子的听写作业
  </text>
+ 
 </view>

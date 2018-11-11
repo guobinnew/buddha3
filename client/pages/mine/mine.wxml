@@ -17,6 +17,11 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="user-info-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="user-info-nickname">{{userInfo.nickName}}</text>
+      <view class="buttons">
+        <button class="btn" type="primary" bindtap="bindClearTap">清除缓存</button>
+        <button class="btn" type="primary" bindtap="bindDataTap">本地数据管理</button>
+        <button class="btn" type="default" bindtap="bindAboutTap">关于</button>
+      </view>
     </block>
   </view>
 </view>

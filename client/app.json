@@ -1,5 +1,6 @@
 {
-  "cloud": "true",
+  "cloud": true,
+  "resizable": true,
   "pages": [
     "pages/welcome/welcome",
     "pages/index/index",
@@ -12,7 +13,8 @@
     "pages/chinese/player/player",
     "pages/english/selection/selection",
     "pages/english/player/player",
-    "pages/source/source"
+    "pages/source/source",
+    "pages/data/data"
   ],
   "usingComponents": {
     "grade": "components/grade/grade"

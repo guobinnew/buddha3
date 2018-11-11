@@ -5,7 +5,7 @@
   </view>
   <view class="main">
     <scroll-view scroll-y scroll-with-animation style="height: {{scrollHeight}}rpx;" class="content" scroll-into-view="{{toView}}">
-    <view wx:for="{{sources}}" wx:key="item.id" class="source-item" id="{{item.id}}" bindtap="bindSourceTap">
+    <view wx:for="{{list}}" wx:key="item.id" class="source-item" id="{{item.id}}" bindtap="bindSourceTap">
     <image class="source-item-img" src="{{item.icon}}" mode="cover"></image>
     <text class="source-item-text">{{item.name}}</text></view>
     </scroll-view>

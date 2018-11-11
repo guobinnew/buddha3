@@ -11,7 +11,11 @@ Page({
     grade: '',
     type: '',
     source: '',
-    sources: [],
+    sources: {
+      'chinese': ['rj','bsd'],
+      'english': ['wys']
+    },
+    list: [],
     scrollHeight: 1206
   },
 
@@ -33,12 +37,17 @@ Page({
    */
   onReady: function () {
     if (app.globalData.manifest) {
-      let sources = app.globalData.manifest.database.items.map( v => {
-        v.icon = "/imgs/" + v.id + ".jpeg"
-        return v
+      let valids = this.data.sources[this.data.type]
+      let list = []
+      app.globalData.manifest.database.items.forEach( v => {
+        if (valids.indexOf(v.id) >= 0) {
+          v.icon = "/imgs/" + v.id + ".jpeg"
+          list.push(v)
+        }
       })
+     
       this.setData({
-        sources: sources
+        list: list
       })
     }
   },
